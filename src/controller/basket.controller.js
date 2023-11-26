@@ -3,7 +3,6 @@ const dataBase = require('../dataBase')
 class BasketController {
     async putProductToBasket(req, res){
         try{
-            //Предусмотреть, что товар уже может быть в корзине
             const {user_id, product_id, count_product} = req.body
             const requestCheckProductInBasket = await dataBase.query(
                 `SELECT * FROM basket WHERE user_id = $1 AND product_id = $2`,

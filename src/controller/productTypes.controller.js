@@ -57,7 +57,7 @@ class ProductTypesController{
             const deleteProdType = await dataBase.query(
                 `DELETE FROM products_types WHERE id_type = '${id_type}'`
             )
-            res.json("Types was removed")
+            res.json("Types has been removed")
         }
         catch(error){
             console.log(error)

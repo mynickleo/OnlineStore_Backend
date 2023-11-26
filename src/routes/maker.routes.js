@@ -1,7 +1,7 @@
 const Router = require('express')
 const router = new Router()
 const makerController = require('../controller/maker.controller')
-const roleMiddleware = require('../middlewaree/roleMiddleware')
+const roleMiddleware = require('../middlewares/roleMiddleware')
 
 router.get('/makers', roleMiddleware(['ADMIN', 'USER']), makerController.getMakers)
 router.post('/makers', roleMiddleware(['ADMIN']), makerController.createMaker)

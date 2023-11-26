@@ -1,7 +1,5 @@
-require('dotenv').config()
 const express = require('express')
-
-//Импорт роутеров
+require('dotenv').config()
 const userRouter = require('./routes/user.routes')
 const rolesRouter = require('./routes/roles.router') 
 const productRouter = require('./routes/product.router') 

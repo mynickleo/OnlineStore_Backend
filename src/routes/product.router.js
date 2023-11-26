@@ -1,7 +1,7 @@
 const Router = require('express')
 const router = new Router()
 const productController = require('../controller/product.controller')
-const roleMiddleware = require('../middlewaree/roleMiddleware')
+const roleMiddleware = require('../middlewares/roleMiddleware')
 
 router.get('/products', roleMiddleware(['ADMIN', 'USER']), productController.getProducts)
 router.get('/products/:id', roleMiddleware(['ADMIN', 'USER']), productController.getProductById)

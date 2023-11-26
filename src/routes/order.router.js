@@ -1,7 +1,7 @@
 const Router = require('express')
 const router = new Router()
 const orderController = require('../controller/order.controller')
-const roleMiddleware = require('../middlewaree/roleMiddleware')
+const roleMiddleware = require('../middlewares/roleMiddleware')
 
 router.get('/orders', roleMiddleware(['ADMIN']), orderController.getOrdersAll)
 router.get('/orders_details', roleMiddleware(['ADMIN']), orderController.getOrdersDetailsAll)

@@ -57,7 +57,7 @@ class MakerController{
             const deleteMaker = await dataBase.query(
                 `DELETE FROM maker_info WHERE name_maker = '${name_maker}'`
             )
-            res.json("Maker was removed")
+            res.json("Maker has been removed")
         }
         catch(error){
             console.log(error)

@@ -42,7 +42,6 @@ class RolesController {
         }
     }
 
-    //Для тестов -->
     async getRoles(req, res){
         try{
             const users = await dataBase.query(`SELECT * FROM roles`);
@@ -65,7 +64,6 @@ class RolesController {
             return res.status(400).json({message: 'Something was wrong...'})
         }
     }
-    //<--
 }
 
 module.exports = new RolesController()

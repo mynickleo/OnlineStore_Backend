@@ -69,7 +69,6 @@ class UserController {
     }
 
     async deleteUser(req, res){
-        //При удалении пользователя стоит предусмотреть удаление корзины и заказов (хотя последнее в реальном проекте под вопросом - мало ли, баг какой-нибудь, товары-то он заказал :D)
         try{
             const {id} = req.body
             const deleteUser = await dataBase.query(
@@ -83,7 +82,6 @@ class UserController {
         }
     }
 
-    //Для тестов --->
     async getUsers(req, res){
         try{
             const users = await dataBase.query(`SELECT * FROM users`);
@@ -106,7 +104,6 @@ class UserController {
             return res.status(400).json({message: 'Something was wrong...'})
         }
     }
-    //<---
 }
 
 module.exports = new UserController()

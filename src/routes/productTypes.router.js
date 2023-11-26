@@ -1,8 +1,7 @@
 const Router = require('express')
 const router = new Router()
 const productTypesController = require('../controller/productTypes.controller')
-const {check} = require('express-validator')
-const roleMiddleware = require('../middlewaree/roleMiddleware')
+const roleMiddleware = require('../middlewares/roleMiddleware')
 
 router.get('/typesprod', roleMiddleware(['ADMIN', 'USER']), productTypesController.getTypes)
 router.post('/typesprod', roleMiddleware(['ADMIN']), productTypesController.createType)
